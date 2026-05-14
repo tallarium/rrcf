@@ -11,6 +11,6 @@ setup(name='rrcf',
       packages=["rrcf"],
       license="MIT",
       install_requires=[
-          'numpy'
+          'numpy<2.0.0',
       ]
       )
