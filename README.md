@@ -25,28 +25,15 @@ Read the docs [here 📖](https://klabum.github.io/rrcf/).
 
 ## Installation
 
-Use `pip` to install `rrcf` via pypi:
+To install this fork of RRCF, please follow the instructions below.
 
-```shell
-$ pip install rrcf
+1. Install the required plugins. 
 ```
-
-Currently, only Python 3 is supported.
-
-### Dependencies
-
-The following dependencies are *required* to install and use `rrcf`:
-
-- [numpy](http://www.numpy.org/) (>= 1.15)
-
-The following *optional* dependencies are required to run the examples shown in the documentation:
-
-- [pandas](https://pandas.pydata.org/) (>= 0.23)
-- [scipy](https://www.scipy.org/) (>= 1.2)
-- [scikit-learn](https://scikit-learn.org/stable/) (>= 0.20)
-- [matplotlib](https://matplotlib.org/) (>= 3.0)
-
-Listed version numbers have been tested and are known to work (this does not necessarily preclude older versions).
+asdf plugin add uv
+asdf plugin add python
+```
+2. Install `uv` and `python` with `asdf install`.
+3. Install the required packages with `uv sync`
 
 ## Robust random cut trees
 
