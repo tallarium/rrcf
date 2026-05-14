@@ -371,14 +371,18 @@ class RCTree:
             grandparent.l = sibling
         else:
             grandparent.r = sibling
+        # Remove references from parent and child to dispose of objects
+        parent.u = None
+        parent.l = None
+        parent.r = None
+        leaf.u = None
         # Update depths
-        parent = grandparent
         self.map_leaves(sibling, op=self._increment_depth, inc=-1)
         # Update leaf counts under each branch
-        self._update_leaf_count_upwards(parent, inc=-1)
+        self._update_leaf_count_upwards(grandparent, inc=-1)
         # Update bounding boxes
         point = leaf.x
-        self._relax_bbox_upwards(parent, point)
+        self._relax_bbox_upwards(grandparent, point)
         return self.leaves.pop(index)
 
     def _update_leaf_count_upwards(self, node, inc=1):
